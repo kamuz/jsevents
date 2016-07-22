@@ -11,7 +11,7 @@
     <li><img src="images/org.gif" alt="orange"></li>
     <li><img src="images/ppl.gif" alt="purple"></li>
     <li><img src="images/blu.gif" alt="blue"></li>
-    <li><img src="images/pnk.gif" alt="pink"></li>
+    <li><img src="images/pnk.gif" alt="pink" id="pink"></li>
     <li><img src="images/grn.gif" alt="green"></li>
     <li><img src="images/ygr.gif" alt="ygreen"></li>
     <li><img src="images/gry.gif" alt="gray"></li>
@@ -19,6 +19,10 @@
   </ul>
 <script>
   document.getElementById('grid').addEventListener('click', function(e) {
+    console.log("Clicked inside the unordered list");
+  }, false);
+
+  document.getElementById('pink').addEventListener('click', function(e) {
     console.log(e.toElement.alt);
   }, false);
 </script>
