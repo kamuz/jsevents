@@ -14,6 +14,8 @@ document.querySelector('.grid').addEventListener('mouseover', function(e) {
       console.log(d.target);
       var myNode = d.target.parentNode.querySelector('div.preview');
       myNode.parentNode.removeChild(myNode);
+
+      e.target.removeEventListener('mouseout', handler, false);
     }, false)
   }
 }, false);
