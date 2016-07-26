@@ -9,5 +9,11 @@ document.querySelector('.grid').addEventListener('mouseover', function(e) {
     var imgLoc = e.target.src;
     myImg.src = imgLoc.substr(0, imgLoc.length-7) + '.jpg';
     myElement.appendChild(myImg);
+
+    e.target.addEventListener('mouseout', function handler(d){
+      console.log(d.target);
+      var myNode = d.target.parentNode.querySelector('div.preview');
+      myNode.parentNode.removeChild(myNode);
+    }, false)
   }
 }, false);
