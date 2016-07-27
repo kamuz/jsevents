@@ -1,4 +1,5 @@
-document.querySelector('.grid').addEventListener('mouseover', function(e) {
+document.querySelector('.grid').addEventListener('contextmenu', function(e) {
+  e.preventDefault();
   if (e.target.tagName === 'IMG') {
 
     var myElement = document.createElement('div');
@@ -10,6 +11,9 @@ document.querySelector('.grid').addEventListener('mouseover', function(e) {
     myImg.src = imgLoc.substr(0, imgLoc.length-7) + '.jpg';
     myElement.appendChild(myImg);
 
+    myElement.style.left = e.offsetX + 15 + 'px';
+    myElement.style.top = e.offsetY + 15 + 'px';
+
     e.target.addEventListener('mouseout', function handler(d){
       console.log(d.target);
       var myNode = d.target.parentNode.querySelector('div.preview');
@@ -17,5 +21,10 @@ document.querySelector('.grid').addEventListener('mouseover', function(e) {
 
       e.target.removeEventListener('mouseout', handler, false);
     }, false)
+
+    e.target.addEventListener('mousemove', function(f){
+      myElement.style.left = f.offsetX + 15 + 'px';
+      myElement.style.top = f.offsetY + 15 + 'px';
+    });
   }
 }, false);
