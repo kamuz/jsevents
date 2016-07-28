@@ -12,4 +12,9 @@ document.querySelector('img.preview').addEventListener('click', function(e){
   mySpinner.className = 'spinner';
   mySpinner.src = 'images/spinner.gif';
   myOverlay.appendChild(mySpinner);
+
+  highRes.addEventListener('load', function(){
+    mySpinner.parentNode.removeChild(mySpinner);
+  });
+
 }, false);
