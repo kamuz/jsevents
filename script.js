@@ -8,4 +8,8 @@ document.querySelector('img.preview').addEventListener('click', function(e){
   highRes.className = 'bgImg';
   highRes.src = lowRes.substr(0, lowRes.length-7) + '.jpg';
   myOverlay.appendChild(highRes);
+
+  mySpinner.className = 'spinner';
+  mySpinner.src = 'images/spinner.gif';
+  myOverlay.appendChild(mySpinner);
 }, false);
